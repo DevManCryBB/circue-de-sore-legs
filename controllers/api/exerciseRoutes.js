@@ -14,3 +14,5 @@ router.get("/", (req, res) => {
       res.status(500).json({ msg: "error", err });
     });
 });
+
+module.exports = router;
