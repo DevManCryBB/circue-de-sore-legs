@@ -18,7 +18,8 @@ CREATE TABLE exercises (
     exercise_id INT AUTO_INCREMENT PRIMARY KEY,
     category_id INT NOT NULL,
     exercise_title VARCHAR(30) NOT NULL,
-    description TEXT
+    description TEXT,
+    funny_quip TEXT
 );
 
 CREATE TABLE daily_schedule (
