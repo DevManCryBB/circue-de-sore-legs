@@ -1,19 +1,16 @@
 const Users = require ('./Users');
 const ExerciseCategories = require ('./ExerciseCategories');
 const Exercises =require('./Exercises');
-const UserExercise = require('./UsersExercises');
 
-Category.hasMany(Exercises);
+
+ExerciseCategories.hasMany(Exercises);
 Exercises.belongsTo(ExerciseCategories);
 
 Users.belongsToMany(Exercises,{
-    through:{
-        model: UserExercise
-    }    
+    through:'Favorites'   
 });
+
 Exercises.belongsToMany(Users,{
-    through:{
-        model: UserExercise
-    }
+    through:'Favorites'
 });
 
