@@ -1,0 +1,23 @@
+:root {
+    --backgrond: black;
+}
+
+body {
+    background-color: var(--backgrond);
+}
+
+.app-description{
+    color: White;
+    font-size: 30px;
+    margin-left: 350px;
+    margin-right: 350px;
+}
+
+#logo {
+    margin-left: 600px;
+}
+
+h2 {
+    margin-left: 800px;
+    color: white;
+}
