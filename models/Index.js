@@ -14,3 +14,4 @@ Exercises.belongsToMany(Users,{
     through:'Favorites'
 });
 
+module.exports = {Users, ExerciseCategories, Exercises}
