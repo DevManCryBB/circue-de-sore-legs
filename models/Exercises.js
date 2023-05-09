@@ -11,14 +11,6 @@ Exercises.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    name: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    description: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
     category_id: {
       type: DataTypes.INTEGER,
       references: {
@@ -26,6 +18,25 @@ Exercises.init(
         key: 'id',
       },
     },
+    exercise_title: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    description: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    funny_quip: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    // category_id: {
+    //   type: DataTypes.INTEGER,
+    //   references: {
+    //     model: 'exercise_categories',
+    //     key: 'id',
+    //   },
+    // },
     
   },
   {
