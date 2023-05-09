@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { User } = require("../../models");
+const { User, Exercises } = require("../../models");
 
 router.post("/", async (req, res) => {
   try {
@@ -56,5 +56,20 @@ router.post("/logout", (req, res) => {
     res.status(404).end();
   }
 });
+
+router.post("/addfavorite/:id",async (req,res)=>{
+  if(!req.session.logged_in){
+    return res.status(403).json({msg:"login first!"})
+  }
+  try{
+    const userData = await User.findOne({ where: { id:req.session.user_id } });
+    const exerciseData = await Exercises.findOne({where:{id:req.params.id}});
+    await userData.addFavorite(exerciseData);
+
+  }catch(err){
+    res.status(400).json(err);
+  }
+
+})
 
 module.exports = router;
