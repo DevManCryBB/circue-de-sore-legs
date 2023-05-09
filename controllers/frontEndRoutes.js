@@ -4,7 +4,7 @@ const {Exercises,Users} = require('../models');
 
 // get all exercise
 router.get('/', async (req, res) => {
-    res.render('all', {exercise});
+    res.render('all', {exercises});
 });
 
 // get one exercise
