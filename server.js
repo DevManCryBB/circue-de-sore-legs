@@ -6,22 +6,22 @@ const sequelize = require('./config/connection');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 
-
-// const exphbs = require("express-handlebars");
-// const path = require("path");
-// const hbs = exphbs.create({});
+// --BELOW--
+// nds stuff
+const exphbs = require("express-handlebars");
+const path = require("path");
+const hbs = exphbs.create({});
 
 
 
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-
-// // Setting HB as default template engine
-// app.engine("handlebars", hbs.engine);
-// app.set("view engine", "handlebars");
-
-
+// --BELOW--
+// nds stuff
+// Setting HB as default template engine
+app.engine("handlebars", hbs.engine);
+app.set("view engine", "handlebars");
 
 
 
@@ -44,5 +44,5 @@ app.use(express.urlencoded({ extended: true }));
 app.use(routes);
 
 sequelize.sync({ force: false }).then(() => {
-  app.listen(PORT, () => console.log('Now listening'));
+  app.listen(PORT, () => console.log('Now listening on: http://localhost:' + PORT));
 });
