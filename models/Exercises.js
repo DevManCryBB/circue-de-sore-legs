@@ -19,6 +19,11 @@ Exercises.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    funny_quip: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+
   },
   {
     sequelize,
