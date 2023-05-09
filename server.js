@@ -2,6 +2,9 @@ const express = require('express');
 const session = require('express-session');
 const routes = require('./controllers');
 
+//Loads the handlebars module
+const handlebars = require('express-handlebars');
+
 const sequelize = require('./config/connection');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
@@ -34,6 +37,20 @@ const sess = {
     db: sequelize
   })
 };
+//Sets our app to use the handlebars engine
+app.set('view engine', 'handlebars');
+
+//Sets handlebars configurations 
+app.engine('handlebars', handlebars({
+ layoutsDir: __dirname + '/views/layouts',
+  }));
+
+app.use(express.static('public')) 
+
+app.get('/', (req, res) => {
+  //Serves the body of the page aka "main.handlebars" to the container //aka "index.handlebars"
+  res.render('main', {layout : 'index'});
+  });
 
 app.use(session(sess));
 

@@ -11,14 +11,7 @@ Exercises.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    category_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: 'exercise_categories',
-        key: 'id',
-      },
-    },
-    exercise_title: {
+    name: {
       type: DataTypes.STRING,
       allowNull: false,
     },
@@ -26,18 +19,6 @@ Exercises.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    funny_quip: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    // category_id: {
-    //   type: DataTypes.INTEGER,
-    //   references: {
-    //     model: 'exercise_categories',
-    //     key: 'id',
-    //   },
-    // },
-    
   },
   {
     sequelize,
