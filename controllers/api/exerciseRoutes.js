@@ -1,11 +1,9 @@
 const router = require("express").Router();
-const { Exercise } = require("../../models");
-const ExerciseCategories = require("../../models/ExerciseCategories");
+const { Exercises, ExerciseCategories } = require("../../models");
+
 
 router.get("/", (req, res) => {
-  Exercise.findAll({
-    include: [{ model: ExerciseCategories }],
-  })
+  Exercises.findAll({})
     .then((exercises) => {
       res.json(exercises);
     })
@@ -14,5 +12,8 @@ router.get("/", (req, res) => {
       res.status(500).json({ msg: "error", err });
     });
 });
+
+
+
 
 module.exports = router;
