@@ -1,0 +1,16 @@
+<div class="menu-container">
+    <div class="card-header col-md-10">
+        <h2> All Categories Placeholder </h2>
+    </div>
+
+{{#each allCategories}}
+    <div class="dish col-md-5">
+        <a href="/categories/{{id}}">
+            <p>
+                {{id}}
+                {{name}}
+            </p>
+        </a>
+    </div>
+{{/each}}
+</div>
