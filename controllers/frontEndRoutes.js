@@ -4,16 +4,16 @@ const {Exercises,Users} = require('../models');
 
 // get all exercise
 router.get("/", (req, res) => {
-      Exercises.findAll({})
+    Exercises.findAll({})
         .then((exercises) => {
-          const hbsData = exercises.map(exercise=>exercise.get({plain:true}));
-          console.log(hbsData)
-          res.render("all",{
+        const hbsData = exercises.map(exercise=>exercise.get({plain:true}));
+        console.log(hbsData)
+        res.render("all",{
             allExercises:  hbsData
         })})
         .catch((err) => {
-          console.log(err);
-          res.status(500).json({ msg: "error", err });
+        console.log(err);
+        res.status(500).json({ msg: "error", err });
         });
     });
 
@@ -25,7 +25,6 @@ router.get('/exercises/:id', (req, res) => {
         res.render("exercises",hbsData)
     })
 
-   
 });
 
 
