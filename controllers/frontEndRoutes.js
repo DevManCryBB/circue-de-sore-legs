@@ -3,6 +3,7 @@ const router = express.Router();
 const {Exercises,Users} = require('../models');
 
 // get all exercise
+
 router.get("/", (req, res) => {
       Exercises.findAll({})
         .then((exercises) => {
@@ -24,8 +25,6 @@ router.get('/exercises/:id', (req, res) => {
         const hbsData = exerData.get({plain:true});
         res.render("exercises",hbsData)
     })
-
-   
 });
 
 
