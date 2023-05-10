@@ -15,7 +15,7 @@ body {
  
 }
 .hero-image {
-  background-image: url("/public/images/logo.png");
+  background-image: url("/images/logo.png");
   background-color: black;
   height: 500px;
   background-position: center;
