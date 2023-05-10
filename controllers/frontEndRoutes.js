@@ -1,13 +1,39 @@
 const express = require('express');
 const router = express.Router();
-const {Exercises,Users} = require('../models');
+const {Exercises,Users, ExerciseCategories} = require('../models');
+
+
+
+//get all categories to categories page
+router.get("/", (req,res) =>{
+  ExerciseCategories.findAll({})
+  .then((categories) =>{
+    const hbsData = categories.map(category=>category.get({plain:true})); 
+    res.render("categories",{
+      allCategories:  hbsData
+  })});
+})
+
+//get exercises by category ID
+router.get('/categories/:id', (req, res) => {
+  Exercises.findAll({
+    where:{exercise_category_id:req.params.id}
+  })
+      .then(exercisesData=>{
+      const hbsData = exercisesData.map(exercise => exercise.get({plain:true}));
+      res.render("exercises",{
+        allExercises:  hbsData
+      })
+  })
+});
+
 
 // get all exercise
 router.get("/", (req, res) => {
       Exercises.findAll({})
         .then((exercises) => {
           const hbsData = exercises.map(exercise=>exercise.get({plain:true}));
-          console.log(hbsData)
+          
           res.render("all",{
             allExercises:  hbsData
         })})
