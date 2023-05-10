@@ -54,6 +54,22 @@ router.get('/exercises/:id', (req, res) => {
     })
 });
 
+//get favorites for profile
+router.get("/profile", async(req,res)=>{
+  try{
+    const userData = await Users.findOne({ where: { id:req.session.user_id } });
+     const allFavorites = await userData.getExercises();
+     const hbsData = allFavorites.map(exercise => exercise.get({plain:true}));
+      res.render("profile",{
+        allFavorites:  hbsData
+      })
+  }catch(err){
+    res.status(400).json(err);
+  }
+
+
+})
+
 
 // ---nds---
 // ---get exercises list (from categories)
