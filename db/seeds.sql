@@ -1,3 +1,4 @@
+-- Active: 1683085212283@@127.0.0.1@3306@exercise_project_db
 USE exercise_project_db;
 
 INSERT INTO exercise_categories (name)
