@@ -31,19 +31,6 @@ router.get('/categories/:id', (req, res) => {
 // get home
 
 router.get("/", (req, res) => {
-<<<<<<< HEAD
-    Exercises.findAll({})
-        .then((exercises) => {
-        const hbsData = exercises.map(exercise=>exercise.get({plain:true}));
-        console.log(hbsData)
-        res.render("all",{
-            allExercises:  hbsData
-        })})
-        .catch((err) => {
-        console.log(err);
-        res.status(500).json({ msg: "error", err });
-        });
-=======
   res.render("home")
       // Exercises.findAll({})
       //   .then((exercises) => {
@@ -56,7 +43,6 @@ router.get("/", (req, res) => {
       //     console.log(err);
       //     res.status(500).json({ msg: "error", err });
       //   });
->>>>>>> dev
     });
 
 // // get one exercise
@@ -66,10 +52,6 @@ router.get('/exercises/:id', (req, res) => {
         const hbsData = exerData.get({plain:true});
         res.render("exercises",hbsData)
     })
-<<<<<<< HEAD
-
-=======
->>>>>>> dev
 });
 
 
