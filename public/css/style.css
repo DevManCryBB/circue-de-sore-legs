@@ -15,7 +15,7 @@ body {
  
 }
 .hero-image {
-  background-image: url(images/1.png);
+  background-image: url("/public/images/logo.png");
   background-color: black;
   height: 500px;
   background-position: center;
@@ -94,7 +94,9 @@ button {
   font-size: 30px;
   
 }
-
+#cat-row {
+  background-color: plum;
+}
 
 
 

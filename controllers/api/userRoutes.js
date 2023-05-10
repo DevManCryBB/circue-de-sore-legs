@@ -1,10 +1,10 @@
 const router = require("express").Router();
-const { User, Exercises } = require("../../models");
+const { Users, Exercises } = require("../../models");
 
 router.post("/", async (req, res) => {
   try {
-    const userData = await User.create(req.body);
-
+    const userData = await Users.create(req.body);
+    console.log(userData)
     req.session.save(() => {
       req.session.user_id = userData.id;
       req.session.logged_in = true;
@@ -18,7 +18,7 @@ router.post("/", async (req, res) => {
 
 router.post("/login", async (req, res) => {
   try {
-    const userData = await User.findOne({ where: { email: req.body.email } });
+    const userData = await Users.findOne({ where: { email: req.body.email } });
 
     if (!userData) {
       res
@@ -57,19 +57,52 @@ router.post("/logout", (req, res) => {
   }
 });
 
+//add a favorite
 router.post("/addfavorite/:id",async (req,res)=>{
   if(!req.session.logged_in){
     return res.status(403).json({msg:"login first!"})
   }
   try{
-    const userData = await User.findOne({ where: { id:req.session.user_id } });
-    const exerciseData = await Exercises.findOne({where:{id:req.params.id}});
-    await userData.addFavorite(exerciseData);
+    const userData = await Users.findOne({ where: { id:req.session.user_id } });
+    const addedFavorite = await userData.addExercise(req.params.id);
+    res.status(200).json(addedFavorite)
+
+  }catch(err){
+    res.status(400).json(err);
+  }
+
+});
+//get all favorites
+router.get("/favorites", async(req,res)=>{
+  if(!req.session.logged_in){
+    return res.status(403).json({msg:"login first!"})
+  }
+  try{
+    const userData = await Users.findOne({ where: { id:req.session.user_id } });
+     const allFavorites = await userData.getExercises();
+     res.status(200).json(allFavorites)
+
+  }catch(err){
+    res.status(400).json(err);
+  }
+
+
+})
+//delete a favorite
+router.delete("/removefavorite/:id",async (req,res)=>{
+  if(!req.session.logged_in){
+    return res.status(403).json({msg:"login first!"})
+  }
+  try{
+    const userData = await Users.findOne({ where: { id:req.session.user_id } });
+    const deletedFavorite = await userData.removeExercise(req.params.id);
+    res.status(200).json(deletedFavorite)
 
   }catch(err){
     res.status(400).json(err);
   }
 
 })
+
 
 module.exports = router;
