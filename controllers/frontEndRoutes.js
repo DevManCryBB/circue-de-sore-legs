@@ -32,17 +32,6 @@ router.get('/categories/:id', (req, res) => {
 
 router.get("/", (req, res) => {
   res.render("home")
-      // Exercises.findAll({})
-      //   .then((exercises) => {
-      //     const hbsData = exercises.map(exercise=>exercise.get({plain:true}));
-          
-      //     res.render("all",{
-      //       allExercises:  hbsData
-      //   })})
-      //   .catch((err) => {
-      //     console.log(err);
-      //     res.status(500).json({ msg: "error", err });
-      //   });
     });
 
 // // get one exercise
@@ -57,12 +46,14 @@ router.get('/exercises/:id', (req, res) => {
 //get favorites for profile
 router.get("/landing", async(req,res)=>{
   try{
+    const categoryData = await ExerciseCategories.findAll({})
+    const hbsDataCategory = categoryData.map(category=>category.get({plain:true})); 
+
     const userData = await Users.findOne({ where: { id:req.session.user_id } });
      const allFavorites = await userData.getExercises();
      const hbsData = allFavorites.map(exercise => exercise.get({plain:true}));
-      res.render("landing",{
-        allFavorites:  hbsData
-      })
+     console.log(hbsDataCategory[0].name)
+      res.render("landing",{user:userData.name, allCategories:hbsDataCategory , allFavorites:  hbsData})
   }catch(err){
     res.status(400).json(err);
   }
