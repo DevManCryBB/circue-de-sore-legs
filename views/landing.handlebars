@@ -4,7 +4,6 @@
     </div>
 
 
-{{!-- <img src="public\css\images\1.png" class="img-thumbnail" alt="logo"> --}}
 <img src="/images/logo.png" class="hero-image" alt="logo">
 <div class="menu-container">
     <div class="card-header col-md-10">
@@ -12,23 +11,11 @@
         <h2>Pick a Category</h2>
     </div>
 
-{{!-- {{#each allCategories}}
-    <div class="dish col-md-5">
-        <a href="/categories/{{id}}">
-            <p>
-                {{id}}
-                {{name}}
-            </p>
-        </a>
-    </div>
-{{/each}} --}}
-{{!-- </div> --}}
 <div class="row">
   <div class="col-sm-6 mb-3 mb-sm-0">
     <div class="card" id="cat-row">
       <div class="card-body">
-        {{!-- <h3 class="card-title">Solo</h3> --}}
-        <h3 class="card-title">{{name}}</h3>
+        <h3 class="card-title">{{allCategories.[0].name}}</h3>
         <p class="card-text">For when no one's watching. Unless you're into that sorta stuff!</p>
         <a href="#" class="btn btn-danger">View</a>
       </div>
@@ -38,11 +25,9 @@
   <div class="col-sm-6">
     <div class="card" id="cat-row">
       <div class="card-body">
-        {{!-- <h3 class="card-title">With Pet</h3> --}}
-        <h3 class="card-title">{{name}}</h3>
+        <h3 class="card-title">{{allCategories.[1].name}}</h3>
         <p class="card-text">Fun with your pet! Or someone else's, whatever!</p>
         <a href="#" class="btn btn-danger">View</a>
-        <a href="/categories/{{id}}" class="btn btn-danger">View</a>
       </div>
     </div>
   </div>
@@ -53,8 +38,7 @@
   <div class="col-sm-6 mb-3 mb-sm-0" >
     <div class="card" id="cat-row">
       <div class="card-body">
-        {{!-- <h3 class="card-title">With Partner</h3> --}}
-        <h3 class="card-title">{{name}}</h3>
+        <h3 class="card-title">{{allCategories.[2].name}}</h3>
         <p class="card-text">Lovers and Friends</p>
         <a href="#" class="btn btn-danger">View</a>
       </div>
@@ -64,8 +48,7 @@
   <div class="col-sm-6">
     <div class="card" id="cat-row">
       <div class="card-body">
-        {{!-- <h3 class="card-title">With Children</h3> --}}
-        <h3 class="card-title">{{name}}</h3>
+        <h3 class="card-title">{{allCategories.[3].name}}</h3>
         <p class="card-text">Get the kids involved! Way more interactive than screen time!</p>
         <a href="#" class="btn btn-danger">View</a>
       </div>
