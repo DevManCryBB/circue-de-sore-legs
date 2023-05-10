@@ -73,13 +73,14 @@ textarea {
   height: 60px;
 }
   
-button {
+button,
+input[type=submit] {
   height: 40px;
   width: 120px;
   background-color: plum;
   color: black;
 }
- 
+
 /* Class Selectors */
 .text-center {
   text-align: center;
