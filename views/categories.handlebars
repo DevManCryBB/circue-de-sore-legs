@@ -1,58 +1,20 @@
-<img src="public\css\images\1.png" class="img-thumbnail" alt="logo">
+<img src="/images/logo.png" class="hero-image" alt="logo">
 <div class="menu-container">
     <div class="card-header col-md-10">
         <h2>Welcome {{user}}</h2>
-    </div>
-
+  </div>
+  </div>
+<div class="row">
 {{#each allCategories}}
-    <div class="dish col-md-5">
-        <a href="/categories/{{id}}">
-            <p>
-                {{id}}
-                {{name}}
-            </p>
-        </a>
-    </div>
-{{/each}}
-</div>
- <div class="row">
   <div class="col-sm-6 mb-3 mb-sm-0">
     <div class="card" id="cat-row">
       <div class="card-body">
-        <h3 class="card-title">Solo</h3>
+        <h3 class="card-title">{{name}}</h3>
         <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <a href="#" class="btn btn-danger">View</a>
+        <a href="/categories/{{id}}" class="btn btn-danger">View</a>
       </div>
     </div>
   </div>
-  <div class="col-sm-6">
-    <div class="card" id="cat-row">
-      <div class="card-body">
-        <h3 class="card-title">With Pet</h3>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <a href="#" class="btn btn-danger">View</a>
-      </div>
-    </div>
-  </div>
-</div>
-<br>
-<div class="row">
-  <div class="col-sm-6 mb-3 mb-sm-0" >
-    <div class="card" id="cat-row">
-      <div class="card-body">
-        <h3 class="card-title">With Partner</h3>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <a href="#" class="btn btn-danger">View</a>
-      </div>
-    </div>
-  </div>
-  <div class="col-sm-6">
-    <div class="card" id="cat-row">
-      <div class="card-body">
-        <h3 class="card-title">With Children</h3>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <a href="#" class="btn btn-danger">View</a>
-      </div>
-    </div>
-  </div>
+  <br>
+{{/each}}
 </div>
