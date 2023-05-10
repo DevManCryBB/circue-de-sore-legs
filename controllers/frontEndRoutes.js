@@ -71,8 +71,24 @@ router.get("/profile", async(req,res)=>{
 })
 
 
+// ---nds---
+// ---get exercises list (from categories)
+// get all exercise PRACTICE
+router.get("/exercises", (req,res) =>{
+  Exercises.findAll({})
+  .then(exercisesData=>{
+    const hbsData = exercisesData.map(exercise => exercise.get({plain:true}));
+    res.render("all",{
+      allExercises:  hbsData
+    })
+})
+});
 
 
+router.get("/profile", (req, res) => {
+  res.render("profile")
+});
+// --------------end nds------
 
 module.exports = router;
 

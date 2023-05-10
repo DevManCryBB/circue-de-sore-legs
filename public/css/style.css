@@ -7,7 +7,7 @@
 /* Element Selectors */
 body {
   position: relative;
-  font-family: "Goudy Bookletter 1911", sans-serif;
+ 
   font-size: 20px;
   background-color: black;
   color: #4F4846;
@@ -15,7 +15,7 @@ body {
  
 }
 .hero-image {
-  background-image: url("/public/images/logo.png");
+  background-image: url("/images/logo.png");
   background-color: black;
   height: 500px;
   background-position: center;
@@ -73,13 +73,14 @@ textarea {
   height: 60px;
 }
   
-button {
+button,
+input[type=submit] {
   height: 40px;
   width: 120px;
   background-color: plum;
   color: black;
 }
- 
+
 /* Class Selectors */
 .text-center {
   text-align: center;
