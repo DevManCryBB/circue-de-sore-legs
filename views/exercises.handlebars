@@ -10,3 +10,16 @@
         </p>
     </div>
 </div>
+
+
+{{#each allExercises}}
+    <div class="dish col-md-5">
+        <a href="/exercises/{{exercise_category_id}}">
+            <p>
+                {{id}}
+                {{name}}
+            </p>
+        </a>
+    </div>
+{{/each}}
+</div>
