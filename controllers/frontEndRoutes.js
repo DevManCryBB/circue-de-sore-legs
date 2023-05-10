@@ -5,7 +5,7 @@ const {Exercises,Users, ExerciseCategories} = require('../models');
 
 
 //get all categories to categories page
-router.get("/", (req,res) =>{
+router.get("/categories", (req,res) =>{
   ExerciseCategories.findAll({})
   .then((categories) =>{
     const hbsData = categories.map(category=>category.get({plain:true})); 
@@ -21,27 +21,28 @@ router.get('/categories/:id', (req, res) => {
   })
       .then(exercisesData=>{
       const hbsData = exercisesData.map(exercise => exercise.get({plain:true}));
-      res.render("exercises",{
+      res.render("all",{
         allExercises:  hbsData
       })
   })
 });
 
 
-// get all exercise
+// get home
 
 router.get("/", (req, res) => {
-      Exercises.findAll({})
-        .then((exercises) => {
-          const hbsData = exercises.map(exercise=>exercise.get({plain:true}));
+  res.render("home")
+      // Exercises.findAll({})
+      //   .then((exercises) => {
+      //     const hbsData = exercises.map(exercise=>exercise.get({plain:true}));
           
-          res.render("all",{
-            allExercises:  hbsData
-        })})
-        .catch((err) => {
-          console.log(err);
-          res.status(500).json({ msg: "error", err });
-        });
+      //     res.render("all",{
+      //       allExercises:  hbsData
+      //   })})
+      //   .catch((err) => {
+      //     console.log(err);
+      //     res.status(500).json({ msg: "error", err });
+      //   });
     });
 
 // // get one exercise
