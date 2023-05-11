@@ -15,13 +15,13 @@ router.get("/categories", (req,res) =>{
 })
 
 //get exercises by category ID
-router.get('/categories/:id', (req, res) => {
+router.get('/exercises/:id', (req, res) => {
   Exercises.findAll({
     where:{exercise_category_id:req.params.id}
   })
       .then(exercisesData=>{
       const hbsData = exercisesData.map(exercise => exercise.get({plain:true}));
-      res.render("all",{
+      res.render("exercises",{
         allExercises:  hbsData
       })
   })
@@ -46,13 +46,13 @@ router.get('/exercises/:id', (req, res) => {
 //get favorites for profile
 router.get("/landing", async(req,res)=>{
   try{
+    console.log("hello")
     const categoryData = await ExerciseCategories.findAll({})
     const hbsDataCategory = categoryData.map(category=>category.get({plain:true})); 
 
     const userData = await Users.findOne({ where: { id:req.session.user_id } });
      const allFavorites = await userData.getExercises();
      const hbsData = allFavorites.map(exercise => exercise.get({plain:true}));
-     console.log(hbsDataCategory[0].name)
       res.render("landing",{user:userData.name, allCategories:hbsDataCategory , allFavorites:  hbsData})
   }catch(err){
     res.status(400).json(err);
