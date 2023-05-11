@@ -17,7 +17,7 @@
       <div class="card-body">
         <h3 class="card-title">{{allCategories.[0].name}}</h3>
         <p class="card-text">For when no one's watching. Unless you're into that sorta stuff!</p>
-        <a href="#" class="btn btn-danger">View</a>
+        <a href="/exercises/{{allCategories.[0].id}}" class="btn btn-danger">View</a>
       </div>
     </div>
   </div>
@@ -27,7 +27,7 @@
       <div class="card-body">
         <h3 class="card-title">{{allCategories.[1].name}}</h3>
         <p class="card-text">Fun with your pet! Or someone else's, whatever!</p>
-        <a href="#" class="btn btn-danger">View</a>
+        <a href="/exercises/{{allCategories.[1].id}}" class="btn btn-danger">View</a>
       </div>
     </div>
   </div>
@@ -40,7 +40,7 @@
       <div class="card-body">
         <h3 class="card-title">{{allCategories.[2].name}}</h3>
         <p class="card-text">Lovers and Friends</p>
-        <a href="#" class="btn btn-danger">View</a>
+        <a href="/exercises/{{allCategories.[2].id}}" class="btn btn-danger">View</a>
       </div>
     </div>
   </div>
@@ -50,7 +50,7 @@
       <div class="card-body">
         <h3 class="card-title">{{allCategories.[3].name}}</h3>
         <p class="card-text">Get the kids involved! Way more interactive than screen time!</p>
-        <a href="#" class="btn btn-danger">View</a>
+        <a href="/exercises/{{allCategories.[3].id}}" class="btn btn-danger">View</a>
       </div>
     </div>
   </div>
@@ -60,7 +60,7 @@
         <h2> All Favorites</h2>
 {{#each allFavorites}}
     <div class="dish col-md-5">
-        <a href="/categories/{{id}}">
+        {{!-- <a href="/categories/{{id}}"> --}}
             <p>
                 {{id}}
                 {{name}}

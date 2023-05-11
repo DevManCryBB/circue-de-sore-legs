@@ -59,13 +59,16 @@ router.post("/logout", (req, res) => {
 
 
 //add a favorite
-router.post("/addfavorite/:id",async (req,res)=>{
+router.post("/addfavorite",async (req,res)=>{
   if(!req.session.logged_in){
     return res.status(403).json({msg:"login first!"})
   }
   try{
+    
     const userData = await Users.findOne({ where: { id:req.session.user_id } });
-    const addedFavorite = await userData.addExercise(req.params.id);
+    console.log(req.body.exercise_id)
+    const addedFavorite = await userData.addExercise(req.body.exercise_id);
+   
     res.status(200).json(addedFavorite)
 
   }catch(err){
