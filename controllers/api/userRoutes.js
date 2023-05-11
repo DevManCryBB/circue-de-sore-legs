@@ -57,7 +57,6 @@ router.post("/logout", (req, res) => {
   }
 });
 
-
 //add a favorite
 router.post("/addfavorite",async (req,res)=>{
   if(!req.session.logged_in){
