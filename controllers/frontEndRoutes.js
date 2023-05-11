@@ -16,6 +16,7 @@ router.get("/categories", (req,res) =>{
 
 //get exercises by category ID
 router.get('/exercises/:id', (req, res) => {
+  console.log(req.params.id)
   Exercises.findAll({
     where:{exercise_category_id:req.params.id}
   })
@@ -39,39 +40,21 @@ router.get("/", (req, res) => {
 });
 
 // // get one exercise
-router.get('/exercises/:id', (req, res) => {
-    Exercises.findByPk(req.params.id,{})
+router.get('/singleExercise/:id', (req, res) => {
+  console.log(req.params.id)
+    Exercises.findByPk(req.params.id)
         .then(exerData=>{
         const hbsData = exerData.get({plain:true});
-        res.render("exercises",hbsData)
+        res.render("singleExercise",hbsData)
     })
 });
 
-//NDS code
-// router.get("/landing", async(req,res)=>{
-//   try{
-//     const categoryData = await ExerciseCategories.findAll({})
-//     const hbsDataCategory = categoryData.map(category=>category.get({plain:true})); 
 
-//     const userData = await Users.findOne({ where: { id:req.session.user_id } });
-//     const allFavorites = await userData.getExercises();
-//     const hbsData = allFavorites.map(exercise => exercise.get({plain:true}));
-
-//     res.render("landing",{user: userData.name, allCategories: hbsDataCategory, allFavorites: hbsData})
-//   }catch(err){
-//     res.status(400).json(err);
-//   }
-// })
-
-
-
-//CARO'S CODE
 router.get("/landing", async(req,res)=>{
-  // console.log("hello");
+
   try{
-    console.log("hello")
+  
     const categoryData = await ExerciseCategories.findAll({})
-    console.log(categoryData);
     const hbsDataCategory = categoryData.map(category=>category.get({plain:true})); 
     
     const userData = await Users.findOne({ where: { id:req.session.user_id } });

@@ -1,11 +1,12 @@
 const saveButtonList = document.querySelectorAll('#saveFav');
+const deleteButtonList = document.querySelectorAll("#delete-fave");
 
 saveButtonList.forEach(saveButton => {
     saveButton.addEventListener("click",e=>{
     e.preventDefault();
     const inpId = e.target.value
     const exerciseObj= {exercise_id: inpId};
-    console.log(exerciseObj)
+  
     fetch("/api/users/addfavorite",{
         method:"POST",
         body:JSON.stringify(exerciseObj),
@@ -14,10 +15,29 @@ saveButtonList.forEach(saveButton => {
         }
     }).then(res=>{
         if(res.ok){
-            alert("has been added!");
+            alert("It has been added!");
 
         } else {
             alert("Already in your list!");
+        }
+    })
+})
+    
+});
+
+
+deleteButtonList.forEach(deleteButton => {
+    deleteButton.addEventListener("click",e=>{
+    e.preventDefault();
+    const id = e.target.value;
+  
+    fetch(`/api/users/removefavorite/${id}`,{
+        method:"DELETE",
+    }).then(res=>{
+        if(res.ok){
+            document.location.replace('/landing');
+        } else {
+            alert("Can't delete!");
         }
     })
 })
