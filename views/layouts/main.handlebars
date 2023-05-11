@@ -9,8 +9,33 @@
  {{!-- <link rel="stylesheet" href="/css/jass.css">  --}}
   <title>Cirque-Du Sore Legs</title>
 </head>
+
+
 <body>
-  {{{ body }}}
+{{!-- -----------nds-------- --}}
+  {{!-- <header>
+    <a href="/">Home</a>
+    {{#if logged_in}}
+      <a href="/landing">Landing Page</a>
+      <button id="logout">Logout</button>
+      <script src="logout.js"></script>
+    {{else}}
+      <a href="login">Login</a>
+    {{/if}}
+  </header> --}}
+  {{!-- ------------------------- --}}
+
+
+  <main>
+    {{{ body }}}
+  </main>
+
+
+  <footer>
+    Made with frustrations and tears
+  </footer>
+
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
   {{!-- <script src="/js/login-signup.js"></script> --}}
 </body>

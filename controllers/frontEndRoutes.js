@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const {Exercises,Users, ExerciseCategories} = require('../models');
+const {Exercises, Users, ExerciseCategories} = require('../models');
 
 
 
@@ -23,16 +23,20 @@ router.get('/exercises/:id', (req, res) => {
       const hbsData = exercisesData.map(exercise => exercise.get({plain:true}));
       res.render("exercises",{
         allExercises:  hbsData
-      })
-  })
+    })})
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json({ msg: "error", err });
+    });
 });
+// ------------------------nds------------------
 
 
 // get home
 
 router.get("/", (req, res) => {
   res.render("home")
-    });
+});
 
 // // get one exercise
 router.get('/exercises/:id', (req, res) => {
@@ -43,13 +47,33 @@ router.get('/exercises/:id', (req, res) => {
     })
 });
 
-//get favorites for profile
+//NDS code
+// router.get("/landing", async(req,res)=>{
+//   try{
+//     const categoryData = await ExerciseCategories.findAll({})
+//     const hbsDataCategory = categoryData.map(category=>category.get({plain:true})); 
+
+//     const userData = await Users.findOne({ where: { id:req.session.user_id } });
+//     const allFavorites = await userData.getExercises();
+//     const hbsData = allFavorites.map(exercise => exercise.get({plain:true}));
+
+//     res.render("landing",{user: userData.name, allCategories: hbsDataCategory, allFavorites: hbsData})
+//   }catch(err){
+//     res.status(400).json(err);
+//   }
+// })
+
+
+
+//CARO'S CODE
 router.get("/landing", async(req,res)=>{
+  // console.log("hello");
   try{
     console.log("hello")
     const categoryData = await ExerciseCategories.findAll({})
+    console.log(categoryData);
     const hbsDataCategory = categoryData.map(category=>category.get({plain:true})); 
-
+    
     const userData = await Users.findOne({ where: { id:req.session.user_id } });
      const allFavorites = await userData.getExercises();
      const hbsData = allFavorites.map(exercise => exercise.get({plain:true}));
@@ -60,7 +84,14 @@ router.get("/landing", async(req,res)=>{
 })
 
 
+
+
+
 module.exports = router;
+
+
+
+
 
 
 

@@ -60,12 +60,13 @@
         <h2> All Favorites</h2>
 {{#each allFavorites}}
     <div class="dish col-md-5">
-        {{!-- <a href="/categories/{{id}}"> --}}
+        <a href="/categories/{{id}}">
             <p>
-                {{id}}
+                {{!-- {{id}} --}}
                 {{name}}
             </p>
         </a>
+      <button id="delete-fave">Delete</button>
     </div>
 {{/each}}
 </div>
