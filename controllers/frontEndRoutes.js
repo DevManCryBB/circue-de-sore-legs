@@ -61,8 +61,8 @@ router.get("/landing", async(req,res)=>{
     const hbsDataCategory = categoryData.map(category=>category.get({plain:true})); 
     
     const userData = await Users.findOne({ where: { id:req.session.user_id } });
-     const allFavorites = await userData.getExercises();
-     const hbsData = allFavorites.map(exercise => exercise.get({plain:true}));
+    const allFavorites = await userData.getExercises();
+    const hbsData = allFavorites.map(exercise => exercise.get({plain:true}));
       res.render("landing",{user:userData.name, allCategories:hbsDataCategory , allFavorites:  hbsData})
   }catch(err){
     res.status(400).json(err);
