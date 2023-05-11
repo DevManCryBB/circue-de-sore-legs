@@ -57,6 +57,25 @@ router.post("/logout", (req, res) => {
   }
 });
 
+//Update user name
+router.put('/updatename', (req, res) => {
+  Users.update(
+    {
+      name: req.body.name,
+    },
+    {
+      where: {
+        name: req.session.user_id,
+      },
+    }
+  )
+    .then((updatedUser) => {
+     
+      res.json(updatedUser);
+    })
+    .catch((err) => res.json(err));
+});
+
 //add a favorite
 router.post("/addfavorite",async (req,res)=>{
   if(!req.session.logged_in){
