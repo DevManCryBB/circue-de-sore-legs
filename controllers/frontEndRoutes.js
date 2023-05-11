@@ -38,14 +38,8 @@ router.get('/exercises/:id', (req, res) => {
 
 router.get("/", (req, res) => {
   // let captcha = new Captcha();
-<<<<<<< HEAD
-  // console.log("Captcha Value: " + captcha);
-  res.render("home")
-  // res.render("home", { captchaImage: captcha.dataURL, captcha: captcha.value })
-=======
   // console.log("Captcha Value: " + captcha); { captchaImage: captcha.dataURL, captcha: captcha.value }
   res.render("home")
->>>>>>> dev
 });
 
 // // get one exercise
