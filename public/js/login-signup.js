@@ -2,13 +2,13 @@
 const loginFormHandler = async (event) => {
     event.preventDefault();
 
-    const captcha = document.getElementById('captchaText');
-    const userVal = captcha.value;
-    const realVal = captcha.getAttribute("data-value");    
-    if (userVal != realVal) {
-      alert("Captcha value incorrect");
-      return;
-    }
+    // const captcha = document.getElementById('captchaText');
+    // const userVal = captcha.value;
+    // const realVal = captcha.getAttribute("data-value");    
+    // if (userVal != realVal) {
+    //   alert("Captcha value incorrect");
+    //   return;
+    // }
   
     // Collect values from the login form
     const email = document.querySelector('#login-email').value.trim();
@@ -37,14 +37,14 @@ const loginFormHandler = async (event) => {
     const name = document.querySelector('#signup-username').value.trim();
     const email = document.querySelector('#signup-email').value.trim();
     const password = document.querySelector('#signup-password').value.trim();
-  
+
     if (name && email && password) {
       const response = await fetch('/api/users', {
         method: 'POST',
         body: JSON.stringify({ name, email, password }),
         headers: { 'Content-Type': 'application/json' },
       });
-  
+
       if (response.ok) {
         document.location.replace('/landing');
       } else {

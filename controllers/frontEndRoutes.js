@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const Captcha = require("captcha-generator-alphanumeric").default;
+// const Captcha = require("captcha-generator-alphanumeric").default;
 const {Exercises, Users, ExerciseCategories} = require('../models');
 
 
@@ -37,9 +37,10 @@ router.get('/exercises/:id', (req, res) => {
 // get home
 
 router.get("/", (req, res) => {
-  let captcha = new Captcha();
-  console.log("Captcha Value: " + captcha);
-  res.render("home", { captchaImage: captcha.dataURL, captcha: captcha.value })
+  // let captcha = new Captcha();
+  // console.log("Captcha Value: " + captcha);
+  res.render("home")
+  // res.render("home", { captchaImage: captcha.dataURL, captcha: captcha.value })
 });
 
 // // get one exercise
@@ -61,8 +62,8 @@ router.get("/landing", async(req,res)=>{
     const hbsDataCategory = categoryData.map(category=>category.get({plain:true})); 
     
     const userData = await Users.findOne({ where: { id:req.session.user_id } });
-     const allFavorites = await userData.getExercises();
-     const hbsData = allFavorites.map(exercise => exercise.get({plain:true}));
+    const allFavorites = await userData.getExercises();
+    const hbsData = allFavorites.map(exercise => exercise.get({plain:true}));
       res.render("landing",{user:userData.name, allCategories:hbsDataCategory , allFavorites:  hbsData})
   }catch(err){
     res.status(400).json(err);
