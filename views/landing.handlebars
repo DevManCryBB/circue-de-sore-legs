@@ -1,20 +1,32 @@
-<div class="menu-container">
-    <div class="card-header col-md-10">
-        <h1> I'm the Landing Page! </h1>
-    </div>
-
-
-<img src="/images/logo.png" class="hero-image" alt="logo">
-<div class="menu-container">
-    <div class="card-header col-md-10">
-        <h2>Welcome {{user}}</h2>
+<div class="header">
+<div class="hero-image">
+  </div>
+  <div>
+        <h1>Welcome {{user}}</h1>
         <h2>Pick a Category</h2>
     </div>
+
+</div>
+
+
+{{!-- <div class="menu-container">
+    <div class="card-header col-md-10">
+        <h1> I'm the Landing Page! </h1>
+    </div> --}}
+
+
+{{!-- <img src="/images/logo.png" class="hero-image" alt="logo"> --}}
+{{!-- <div class="menu-container">
+    <div class="card-header col-md-10">
+        <h1>Welcome {{user}}</h1>
+        <h2>Pick a Category</h2>
+    </div> --}}
 
 <div class="row">
   <div class="col-sm-6 mb-3 mb-sm-0">
     <div class="card" id="cat-row">
       <div class="card-body">
+         <img src="/images/solo.jpg" class="card-img-top" alt="solo">
         <h3 class="card-title">{{allCategories.[0].name}}</h3>
         <p class="card-text">For when no one's watching. Unless you're into that sorta stuff!</p>
         <a href="/exercises/{{allCategories.[0].id}}" class="btn btn-danger">View</a>
@@ -25,6 +37,7 @@
   <div class="col-sm-6">
     <div class="card" id="cat-row">
       <div class="card-body">
+          <img src="/images/withpet.jpg" class="card-img-top" alt="with pet">
         <h3 class="card-title">{{allCategories.[1].name}}</h3>
         <p class="card-text">Fun with your pet! Or someone else's, whatever!</p>
         <a href="/exercises/{{allCategories.[1].id}}" class="btn btn-danger">View</a>
@@ -38,6 +51,7 @@
   <div class="col-sm-6 mb-3 mb-sm-0" >
     <div class="card" id="cat-row">
       <div class="card-body">
+           <img src="/images/withpartner.jpg" class="card-img-top" alt="with partner">
         <h3 class="card-title">{{allCategories.[2].name}}</h3>
         <p class="card-text">Lovers and Friends</p>
         <a href="/exercises/{{allCategories.[2].id}}" class="btn btn-danger">View</a>
@@ -48,6 +62,7 @@
   <div class="col-sm-6">
     <div class="card" id="cat-row">
       <div class="card-body">
+         <img src="/images/withkids.jpg" class="card-img-top" alt="with children">
         <h3 class="card-title">{{allCategories.[3].name}}</h3>
         <p class="card-text">Get the kids involved! Way more interactive than screen time!</p>
         <a href="/exercises/{{allCategories.[3].id}}" class="btn btn-danger">View</a>

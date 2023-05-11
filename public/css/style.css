@@ -11,24 +11,40 @@ body {
   font-size: 20px;
   background-color: black;
   color: #4F4846;
-  margin: 0;
+  /* margin: 0; */
+margin-right: 20px;
+margin-left: 20px;
  
 }
 .hero-image {
   background-image: url("/images/logo.png");
   background-color: black;
-  height: 500px;
+  height: 400px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
   position: relative;
+  
+}
+.header {
+  /* padding: 60px; */
+  text-align: center;
+  background: black;
+  font-size: 30px;
+ 
+}
+h1 {
+  margin: 20px;
+  /* text-align: center; */
+  color: lightpink;
+  font-size: 55px;
+ justify-content: center;
 }
 
-h1,
 h2 {
   margin: 20px;
   text-align: center;
-  color: plum;
+  color: lightpink;
 }
 
 figure {
@@ -40,19 +56,19 @@ img {
   margin: 10px auto;
 }
 
-section {
+/* section {
   margin-bottom: 0;
   padding: 20px 10px 40px 10px;
   border-top: 3px solid #DDAF94;
   background-color:  #E8CEBF;
-}
+} */
 
 form {
   /* Center the form on the page */
   margin: 0 auto;
   width: 500px;
   padding: 10px;
-  border: 5px solid plum;
+  border: 5px solid lightpink;
   border-radius: 20px;
 }
 
@@ -77,7 +93,7 @@ button,
 input[type=submit] {
   height: 40px;
   width: 120px;
-  background-color: plum;
+  background-color: lightpink;
   color: black;
 }
 
@@ -86,9 +102,9 @@ input[type=submit] {
   text-align: center;
 }
 
-.text-right {
+/* .text-right {
   text-align: right;
-}
+} */
 
 #info {
   color: White;
@@ -96,10 +112,17 @@ input[type=submit] {
   
 }
 #cat-row {
-  background-color: plum;
+  background-color: lightpink;
 }
 
 
+  
+.menu-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  text-align: center;
+}
 
 
 
