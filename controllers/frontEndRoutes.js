@@ -15,6 +15,7 @@ router.get("/categories", (req,res) =>{
 })
 
 //get exercises by category ID
+<<<<<<< HEAD
 // router.get('/categories/:id', (req, res) => {
 //   Exercises.findAll({
 //     where:{exercise_category_id:req.params.id}
@@ -37,6 +38,15 @@ router.get("/exercises", (req, res) => {
       const hbsData = exercises.map(exercise=>exercise.get({plain:true}));
       console.log(hbsData)
       res.render("all",{
+=======
+router.get('/exercises/:id', (req, res) => {
+  Exercises.findAll({
+    where:{exercise_category_id:req.params.id}
+  })
+      .then(exercisesData=>{
+      const hbsData = exercisesData.map(exercise => exercise.get({plain:true}));
+      res.render("exercises",{
+>>>>>>> dev
         allExercises:  hbsData
     })})
     .catch((err) => {
@@ -84,16 +94,15 @@ router.get('/exercises/:id', (req, res) => {
 router.get("/landing", async(req,res)=>{
   // console.log("hello");
   try{
+    console.log("hello")
     const categoryData = await ExerciseCategories.findAll({})
     console.log(categoryData);
     const hbsDataCategory = categoryData.map(category=>category.get({plain:true})); 
     
     const userData = await Users.findOne({ where: { id:req.session.user_id } });
-    const allFavorites = await userData.getExercises();
-    const hbsData = allFavorites.map(exercise => exercise.get({plain:true}));
-    // console.log(hbsData);
-    // console.log(hbsDataCategory);
-    res.render("landing",{user:userData.name, allCategories: hbsDataCategory, allFavorites:  hbsData})
+     const allFavorites = await userData.getExercises();
+     const hbsData = allFavorites.map(exercise => exercise.get({plain:true}));
+      res.render("landing",{user:userData.name, allCategories:hbsDataCategory , allFavorites:  hbsData})
   }catch(err){
     res.status(400).json(err);
   }
