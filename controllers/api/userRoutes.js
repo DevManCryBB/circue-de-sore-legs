@@ -82,6 +82,7 @@ router.get("/favorites", async(req,res)=>{
     return res.status(403).json({msg:"login first!"})
   }
   try{
+    
     const userData = await Users.findOne({ where: { id:req.session.user_id } });
      const allFavorites = await userData.getExercises();
      res.status(200).json(allFavorites)
@@ -99,6 +100,7 @@ router.delete("/removefavorite/:id",async (req,res)=>{
   }
   try{
     const userData = await Users.findOne({ where: { id:req.session.user_id } });
+    console.log("================"+ req.params.id)
     const deletedFavorite = await userData.removeExercise(req.params.id);
     res.status(200).json(deletedFavorite)
 
