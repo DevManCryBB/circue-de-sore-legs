@@ -23,6 +23,10 @@ Exercises.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    image: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
     exercise_category_id: {
       type: DataTypes.INTEGER,
       references: {
