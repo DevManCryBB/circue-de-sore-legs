@@ -15,30 +15,6 @@ router.get("/categories", (req,res) =>{
 })
 
 //get exercises by category ID
-<<<<<<< HEAD
-// router.get('/categories/:id', (req, res) => {
-//   Exercises.findAll({
-//     where:{exercise_category_id:req.params.id}
-//   })
-//       .then(exercisesData=>{
-//       const hbsData = exercisesData.map(exercise => exercise.get({plain:true}));
-//       res.render("all",{
-//         allExercises:  hbsData
-//       })
-//   })
-// });
-
-
-
-// ------------------------nds------------------
-// get all exercise
-router.get("/exercises", (req, res) => {
-  Exercises.findAll({})
-    .then((exercises) => {
-      const hbsData = exercises.map(exercise=>exercise.get({plain:true}));
-      console.log(hbsData)
-      res.render("all",{
-=======
 router.get('/exercises/:id', (req, res) => {
   Exercises.findAll({
     where:{exercise_category_id:req.params.id}
@@ -46,7 +22,6 @@ router.get('/exercises/:id', (req, res) => {
       .then(exercisesData=>{
       const hbsData = exercisesData.map(exercise => exercise.get({plain:true}));
       res.render("exercises",{
->>>>>>> dev
         allExercises:  hbsData
     })})
     .catch((err) => {
