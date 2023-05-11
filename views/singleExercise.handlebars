@@ -3,14 +3,13 @@
         <h2> Your Favorite You just clicked on </h2>
     </div>
 
-{{#each allExercises}}
-    <div class="dish col-md-5">
-        <a href="/exercises/{{id}}">
-            <p>
-                {{id}}
-                {{name}}
-            </p>
-        </a>
-    </div>
-{{/each}}
+
+<div class="card" style="width: 18rem;">
+  <img src="/images/angry-cleaning.gif" class="card-img-top" alt="squat">
+  <div class="card-body p-3">
+    <h5 class="card-title">{{name}}</h5>
+    <p class="card-text">{{description}}</p>
+    <p class="card-text">{{funny_quip}}</p>
+  </div>
+</div>
 </div>
