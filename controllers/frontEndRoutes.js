@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const Captcha = require("captcha-generator-alphanumeric").default;
+// const Captcha = require("captcha-generator-alphanumeric").default;
 const {Exercises, Users, ExerciseCategories} = require('../models');
 
 
@@ -37,9 +37,9 @@ router.get('/exercises/:id', (req, res) => {
 // get home
 
 router.get("/", (req, res) => {
-  let captcha = new Captcha();
-  console.log("Captcha Value: " + captcha);
-  res.render("home", { captchaImage: captcha.dataURL, captcha: captcha.value })
+  // let captcha = new Captcha();
+  // console.log("Captcha Value: " + captcha); { captchaImage: captcha.dataURL, captcha: captcha.value }
+  res.render("home")
 });
 
 // // get one exercise
