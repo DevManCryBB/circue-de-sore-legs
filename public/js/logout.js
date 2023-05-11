@@ -5,7 +5,7 @@ document.querySelector("#logout").addEventListener("click",e=>{
         method:"POST",
     }).then(res=>{
         if(res.ok){
-           location.replace("/")
+        location.replace("/")
         } else {
             alert("womp womp")
         }
