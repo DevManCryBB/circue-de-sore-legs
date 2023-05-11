@@ -1,6 +1,14 @@
 
 const loginFormHandler = async (event) => {
     event.preventDefault();
+
+    const captcha = document.getElementById('captchaText');
+    const userVal = captcha.value;
+    const realVal = captcha.getAttribute("data-value");    
+    if (userVal != realVal) {
+      alert("Captcha value incorrect");
+      return;
+    }
   
     // Collect values from the login form
     const email = document.querySelector('#login-email').value.trim();
@@ -44,7 +52,7 @@ const loginFormHandler = async (event) => {
       }
     }
   };
-  
+
   document
     .querySelector('#login-form')
     .addEventListener('submit', loginFormHandler);
@@ -52,4 +60,4 @@ const loginFormHandler = async (event) => {
   document
     .querySelector('#signup-form')
     .addEventListener('submit', signupFormHandler);
-  
+

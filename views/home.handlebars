@@ -16,6 +16,8 @@
     <form action="" id="login-form" >
         <input type="text" placeholder="email" id="login-email">
         <input type="password" placeholder="password" id="login-password">
+        <img src="{{captchaImage}}"/>
+        <input id="captchaText" type="text" data-value="{{captcha}}">
         <input type="submit" value="Login!">
         {{!-- <button>Login!</button> --}}
     </form>
