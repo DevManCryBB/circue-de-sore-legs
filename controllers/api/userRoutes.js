@@ -53,7 +53,7 @@ router.post("/logout", (req, res) => {
 });
 
 //Update user name
-router.put('/updateName', (req, res) => {
+router.put('/updatename', (req, res) => {
   if(!req.session.logged_in){
     return res.status(403).json({msg:"login first!"})
   }
@@ -68,8 +68,9 @@ router.put('/updateName', (req, res) => {
     }
   )
     .then((updatedUser) => {
-     
+     console.log("++++++++++++++++"+updatedUser)
       res.json(updatedUser);
+
     })
     .catch((err) => res.json(err));
 });

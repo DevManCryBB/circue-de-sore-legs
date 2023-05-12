@@ -16,6 +16,7 @@ saveButtonList.forEach(saveButton => {
     }).then(res=>{
         if(res.ok){
             alert("It has been added!");
+    
 
         } else {
             alert("Already in your list!");
