@@ -36,7 +36,7 @@ deleteButtonList.forEach(deleteButton => {
         method:"DELETE",
     }).then(res=>{
         if(res.ok){
-            document.location.replace('/landing');
+            document.location.reload();
         } else {
             alert("Can't delete!");
         }
