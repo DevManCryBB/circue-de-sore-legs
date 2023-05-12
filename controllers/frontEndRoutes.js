@@ -14,7 +14,9 @@ router.get("/categories", (req,res) =>{
       allCategories:  hbsData
   })});
 })
-
+router.get("/updateName", (req,res) =>{
+  res.render("updateName")
+});
 //get exercises by category ID
 router.get('/exercises/:id', (req, res) => {
   console.log(req.params.id)
