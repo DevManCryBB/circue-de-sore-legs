@@ -1,0 +1,35 @@
+<div class="header">
+<div class="hero-image">
+  </div>
+
+<br>
+  <nav class="neonText">
+    <a id="logout" class="btn btn-dark">Logout</a>
+    <a id="favorites" class="btn btn-dark" href="/landing">Home</a>
+</nav>
+
+  <br>
+  <div>
+        <h1>Your Favorites</h1>
+       
+    </div>
+<br>
+    
+<div class="row">
+{{#each allFavorites}}
+      <!--ADD CLASSES HERE d-flex align-items-stretch-->
+      <div class="col-lg-4 mb-4 d-flex align-items-stretch">
+        <div class="card">
+          <img src="{{{image}}}" class="card-img-top" alt="Card Image">
+          <div class="card-body d-flex flex-column">
+            <h2 class="card-title">{{name}}</h2>
+            <p class="card-text mb-4">{{description}}</p>
+            <p class="card-text mb-4">{{funny_quip}}</p>
+             <button id="delete-fave" class="btn btn-dark mt-auto align-self-center" value="{{id}}">Delete</button>
+          </div>
+        </div>
+      </div>
+    
+  {{/each}}
+    </div>
+ <script src="/js/save-to-favorites.js"></script>

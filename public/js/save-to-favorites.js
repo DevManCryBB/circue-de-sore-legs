@@ -16,6 +16,7 @@ saveButtonList.forEach(saveButton => {
     }).then(res=>{
         if(res.ok){
             alert("It has been added!");
+    
 
         } else {
             alert("Already in your list!");
@@ -35,7 +36,7 @@ deleteButtonList.forEach(deleteButton => {
         method:"DELETE",
     }).then(res=>{
         if(res.ok){
-            document.location.replace('/landing');
+            document.location.reload();
         } else {
             alert("Can't delete!");
         }

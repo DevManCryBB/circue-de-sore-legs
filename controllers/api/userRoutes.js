@@ -22,18 +22,13 @@ router.post("/login", async (req, res) => {
 
     if (!userData) {
       res
-        .status(400)
-        .json({ message: "Incorrect email or password, please try again" });
-      return;
+      return res.status(400).json({ message: "Incorrect email or password, please try again" });
     }
 
     const validPassword = await userData.checkPassword(req.body.password);
 
     if (!validPassword) {
-      res
-        .status(400)
-        .json({ message: "Incorrect email or password, please try again" });
-      return;
+      return res.status(400).json({ message: "Incorrect email or password, please try again" });
     }
 
     req.session.save(() => {
@@ -43,7 +38,7 @@ router.post("/login", async (req, res) => {
       res.json({ user: userData, message: "You are now logged in!" });
     });
   } catch (err) {
-    res.status(400).json(err);
+    return res.status(400).json({ message: "Incorrect email or password, please try again" });
   }
 });
 
@@ -55,6 +50,29 @@ router.post("/logout", (req, res) => {
   } else {
     res.status(404).end();
   }
+});
+
+//Update user name
+router.put('/updatename', (req, res) => {
+  if(!req.session.logged_in){
+    return res.status(403).json({msg:"login first!"})
+  }
+  Users.update(
+    {
+      name: req.body.name,
+    },
+    {
+      where: {
+        id: req.session.user_id,
+      },
+    }
+  )
+    .then((updatedUser) => {
+     console.log("++++++++++++++++"+updatedUser)
+      res.json(updatedUser);
+
+    })
+    .catch((err) => res.json(err));
 });
 
 //add a favorite
