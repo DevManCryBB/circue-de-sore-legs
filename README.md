@@ -17,13 +17,17 @@ We wanted to create a fun new fitness app with a twist: funny exercises you can 
 
 Simply follow the url link and sign up!
 
+https://cirque-du-sore-legs.herokuapp.com/
+
 ## Usage
 
-Once you have clicked the link, sign up with a username and password. You are then lead to the landing page which includes the exercise categories that you can choose from. Once you have clicked the desired category, you are lead to the list of exercises pertaining to that category. You are able to favorite any exercise of your choice and that list of favorites will then appear on your landing page.
+Once you have clicked the link, sign up with a username and password. You are then lead to the landing page which includes the exercise categories that you can choose from. Once you have clicked the desired category, you are lead to the list of exercises pertaining to that category. You are able to favorite any exercise of your choice and that list of favorites will then appear on your favorites page.
 
-To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative file path, add it to your README using the following syntax:
-
-![alt text](assets/images/screenshot.png)
+![Login](./public/images/Login%20Page.png)
+![Categories](./public/images/Exercise%20Categories.png)
+![Exercises](./public/images/Exercises.png)
+![Favorites](./public/images/Favorites.png)
+![Name Change](./public/images/Name%20Change%20Page.png)
 
 ## Credits
 
