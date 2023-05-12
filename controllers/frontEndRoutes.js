@@ -19,7 +19,7 @@ router.get("/updateName", (req,res) =>{
 });
 //get exercises by category ID
 router.get('/exercises/:id', (req, res) => {
-  console.log(req.params.id)
+  console.log("+++++++++++++++++++++++"+req.params.id)
   Exercises.findAll({
     where:{exercise_category_id:req.params.id}
   })
