@@ -13,11 +13,10 @@ router.get("/categories", (req,res) =>{
     res.render("categories",{
       allCategories:  hbsData
   })});
-});
+})
 router.get("/updateName", (req,res) =>{
   res.render("updateName")
 });
-
 //get exercises by category ID
 router.get('/exercises/:id', (req, res) => {
   console.log(req.params.id)
@@ -34,7 +33,7 @@ router.get('/exercises/:id', (req, res) => {
       res.status(500).json({ msg: "error", err });
     });
 });
-
+// ------------------------nds------------------
 
 
 // get home
@@ -55,7 +54,7 @@ router.get('/singleExercise/:id', (req, res) => {
     })
 });
 
-//main page-landing/profile
+
 router.get("/landing", async(req,res)=>{
 
   try{
@@ -64,13 +63,25 @@ router.get("/landing", async(req,res)=>{
     const hbsDataCategory = categoryData.map(category=>category.get({plain:true})); 
     
     const userData = await Users.findOne({ where: { id:req.session.user_id } });
-    const allFavorites = await userData.getExercises();
-    const hbsData = allFavorites.map(exercise => exercise.get({plain:true}));
-      res.render("landing",{user:userData.name, allCategories:hbsDataCategory , allFavorites:  hbsData})
+     const allFavorites = await userData.getExercises();
+     const hbsData = allFavorites.map(exercise => exercise.get({plain:true}));
+      res.render("landing",{user:userData.name, allCategories:hbsDataCategory , allFavorites:  hbsData});
   }catch(err){
     res.status(400).json(err);
   }
-})
+});
+
+router.get("/favorites", async(req,res)=>{
+  try{
+    const userData = await Users.findOne({ where: { id:req.session.user_id } });
+    const allFavorites = await userData.getExercises();
+  const hbsData = allFavorites.map(exercise => exercise.get({plain:true}));
+  console.log("Extracted hbsData: " + hbsData);
+  res.render("favorites",{allFavorites: hbsData});
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
 
 
 
