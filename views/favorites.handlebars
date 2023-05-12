@@ -2,19 +2,19 @@
 <div class="hero-image">
   </div>
 
-
+<br>
   <nav class="neonText">
     {{!-- <a href="/" class="btn btn-dark">Home</a> --}}
     <a id="logout" class="btn btn-dark">Logout</a>
     <a id="favorites" class="btn btn-dark" href="/landing">Home</a>
 </nav>
 
-  
+  <br>
   <div>
         <h1>Your Favorites</h1>
        
     </div>
-
+<br>
     
 {{!-- {{#each allFavorites}} --}}
     {{!-- <div class="dish col-md-5">
@@ -28,14 +28,15 @@
     </div>
 {{/each}} --}} 
 
+<div class="row">
 {{#each allFavorites}}
-<section class="bg-black pt-5 pb-5 shadow-sm">
+{{!-- <section class="bg-black pt-5 pb-5 shadow-sm">
   <div class="container">
     <div class="row pt-5">
       <div class="col-12">
       </div>
     </div>
-    <div class="row">
+    <div class="row"> --}}
       <!--ADD CLASSES HERE d-flex align-items-stretch-->
       <div class="col-lg-4 mb-4 d-flex align-items-stretch">
         <div class="card">
@@ -48,7 +49,6 @@
           </div>
         </div>
       </div>
-      </div>
-  </div>
+    
   {{/each}}
-</section>
+    </div>

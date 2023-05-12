@@ -1,41 +1,41 @@
  <div class="header">
 <div class="hero-image">
   </div>
-  
+  <br>
 
+  
 
    <nav class="neonText">
     <a href="/landing" class="btn btn-dark">Home</a>
     <a id="logout" class="btn btn-dark">Logout</a>
     <a id="favorites" class="btn btn-dark" href="/favorites">Favorites</a>
 </nav>
+</div>
+<br>
+<br>
+
+
  <div class="row">
 {{#each allExercises}}
-
- <section class="bg-black pt-5 pb-5 shadow-sm">
-  <div class="container">
-    <div class="row pt-5">
-      <div class="col-12">
-      </div>
-    </div>
-    <div class="row">
-      <!--ADD CLASSES HERE d-flex align-items-stretch-->
+ 
       <div class="col-lg-4 mb-4 d-flex align-items-stretch">
         <div class="card">
           <img src="{{{image}}}" class="card-img-top" alt="Card Image">
           <div class="card-body d-flex flex-column">
             <h2 class="card-title">{{name}}</h2>
-            <p class="card-text mb-4">{{description}}</p>
-            <p class="card-text mb-4">{{funny_quip}}</p>
-            <a  id="saveFav" class="btn btn-dark mt-auto align-self-center " value="{{id}}">Save</a>
+            <br>
+            <h4 class="card-text mb-4">{{description}}</h4>
+            <h4 class="card-text mb-4">{{funny_quip}}</h4>
+            <a href="/favorites" id="saveFav" class="btn btn-dark mt-auto align-self-center " value="{{id}}">Save</a>
           </div>
         </div>
       </div>
+        {{/each}} 
     </div>
-  </div>
-    {{/each}} 
-    </div>
- </section>
+  
+  
+    {{!-- </div>
+ </section> --}}
 {{!-- {{/each}} --}}
 
 
