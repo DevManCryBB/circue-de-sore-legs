@@ -13,7 +13,10 @@ router.get("/categories", (req,res) =>{
     res.render("categories",{
       allCategories:  hbsData
   })});
-})
+});
+router.get("/updateName", (req,res) =>{
+  res.render("updateName")
+});
 
 //get exercises by category ID
 router.get('/exercises/:id', (req, res) => {
@@ -31,7 +34,7 @@ router.get('/exercises/:id', (req, res) => {
       res.status(500).json({ msg: "error", err });
     });
 });
-// ------------------------nds------------------
+
 
 
 // get home
@@ -52,7 +55,7 @@ router.get('/singleExercise/:id', (req, res) => {
     })
 });
 
-
+//main page-landing/profile
 router.get("/landing", async(req,res)=>{
 
   try{

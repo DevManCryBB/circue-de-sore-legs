@@ -23,10 +23,10 @@ const loginFormHandler = async (event) => {
       });
   
       if (response.ok) {
-        // If successful, redirect the browser to the profile page
+        // If successful, redirect the browser to the landing page
         document.location.replace('/landing');
       } else {
-        alert(response.statusText);
+        alert("Incorrect email or password, please try again")
       }
     }
   };

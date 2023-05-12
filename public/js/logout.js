@@ -1,6 +1,6 @@
+
 document.querySelector("#logout").addEventListener("click",e=>{
     e.preventDefault();
-    console.log("hello")
     fetch("/api/users/logout",{
         method:"POST",
     }).then(res=>{
@@ -10,4 +10,4 @@ document.querySelector("#logout").addEventListener("click",e=>{
             alert("womp womp")
         }
     })
-})
+});
