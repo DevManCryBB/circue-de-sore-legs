@@ -1,0 +1,54 @@
+<div class="header">
+<div class="hero-image">
+  </div>
+
+
+  <nav class="neonText">
+    {{!-- <a href="/" class="btn btn-dark">Home</a> --}}
+    <a id="logout" class="btn btn-dark">Logout</a>
+    <a id="favorites" class="btn btn-dark" href="/landing">Home</a>
+</nav>
+
+  
+  <div>
+        <h1>Your Favorites</h1>
+       
+    </div>
+
+    
+{{!-- {{#each allFavorites}} --}}
+    {{!-- <div class="dish col-md-5">
+        <a href="/singleExercise/{{id}}">
+            <p>
+                {{!-- {{id}} --}}
+                {{!-- {{name}}
+            </p>
+        </a>
+      <button id="delete-fave" value="{{id}}">Delete</button>
+    </div>
+{{/each}} --}} 
+
+{{#each allFavorites}}
+<section class="bg-black pt-5 pb-5 shadow-sm">
+  <div class="container">
+    <div class="row pt-5">
+      <div class="col-12">
+      </div>
+    </div>
+    <div class="row">
+      <!--ADD CLASSES HERE d-flex align-items-stretch-->
+      <div class="col-lg-4 mb-4 d-flex align-items-stretch">
+        <div class="card">
+          <img src="{{{image}}}" class="card-img-top" alt="Card Image">
+          <div class="card-body d-flex flex-column">
+            <h2 class="card-title">{{name}}</h2>
+            <p class="card-text mb-4">{{description}}</p>
+            <p class="card-text mb-4">{{funny_quip}}</p>
+             <button id="delete-fave" value="{{id}}">Delete</button>
+          </div>
+        </div>
+      </div>
+      </div>
+  </div>
+  {{/each}}
+</section>
