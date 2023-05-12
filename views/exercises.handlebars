@@ -1,0 +1,47 @@
+ <div class="header">
+<div class="hero-image">
+  </div>
+  <br>
+  <nav class="neonText">
+    <a href="/landing" class="btn btn-dark">Home</a>
+    <a id="logout" class="btn btn-dark">Logout</a>
+    <a id="favorites" class="btn btn-dark" href="/favorites">Favorites</a>
+</nav>
+<br>
+   <div>
+        <h1> Exercises in this Category </h1>
+    </div>
+
+ 
+
+  
+
+ 
+</div>
+<br>
+<br>
+
+
+ <div class="row">
+{{#each allExercises}}
+ 
+      <div class="col-lg-4 mb-4 d-flex align-items-stretch">
+        <div class="card">
+          <img src="{{{image}}}" class="card-img-top" alt="Card Image">
+          <div class="card-body d-flex flex-column">
+            <h2 class="card-title">{{name}}</h2>
+            <br>
+            <h4 class="card-text mb-4">{{description}}</h4>
+            <h4 class="card-text mb-4">{{funny_quip}}</h4>
+            <button href="/favorites" id="saveFav" class="btn btn-dark mt-auto align-self-center " value="{{id}}">Save</button>
+          </div>
+        </div>
+      </div>
+        {{/each}} 
+    </div>
+
+  
+  <script src="/js/save-to-favorites.js"></script>
+  <script src="/js/logout.js"></script>
+  
+  

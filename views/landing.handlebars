@@ -1,0 +1,88 @@
+<div class="header">
+<div class="hero-image">
+  </div>
+
+<br>
+  <nav class="neonText">
+    {{!-- <a href="/" class="btn btn-dark">Home</a> --}}
+    <a id="logout" class="btn btn-dark">Logout</a>
+    <a id="favorites" class="btn btn-dark" href="/favorites">Favorites</a>
+    <a href="/updateName" class="btn btn-dark">Change Username</a>
+</nav>
+
+<br>  
+  <div>
+        <h1>Welcome {{user}}</h1> 
+        <br>
+        <h2>Pick a Category</h2>
+    </div>
+
+<br>
+<br>
+
+<div class="row">
+     <div class="col-lg-4 mb-4 d-flex align-items-stretch">
+    <div class="card">
+        <img src="/images/solo.jpg" class="card-img-top" alt="solo">
+         <div class="card-body d-flex flex-column">
+        <h2 class="card-title">{{allCategories.[0].name}}</h2>
+        <br>
+        <p class="card-text">For when no one's watching. Unless you're into that sorta stuff!</p>
+        <a href="/exercises/{{allCategories.[0].id}}" class="btn btn-dark mt-auto align-self-center">View</a>
+
+      </div>
+    </div>
+  </div>
+
+  {{!-- <div class="col-sm-6"> --}}
+    <div class="col-lg-4 mb-4 d-flex align-items-stretch">
+    <div class="card">
+    
+          <img src="/images/withpet.jpg" class="card-img-top" alt="with pet">
+           <div class="card-body d-flex flex-column">
+        <h2 class="card-title">{{allCategories.[1].name}}</h2>
+        <br>
+        <p class="card-text">Fun with your pet! Or someone else's, whatever!</p>
+        <a href="/exercises/{{allCategories.[1].id}}" class="btn btn-dark mt-auto align-self-center ">View</a>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="col-lg-4 mb-4 d-flex align-items-stretch">
+    <div class="card" >
+     
+          <img src="/images/withpartner.jpg" class="card-img-top" alt="with partner">
+           <div class="card-body d-flex flex-column">
+        <h2 class="card-title">{{allCategories.[2].name}}</h2>
+        <br>
+        <p class="card-text">Lovers and Friends</p>
+        <a href="/exercises/{{allCategories.[2].id}}" class="btn btn-dark mt-auto align-self-center">View</a>
+      </div>
+  </div>
+</div>
+   
+
+  <div class="col-lg-4 mb-4 d-flex align-items-stretch">
+    <div class="card">
+     
+        <img src="/images/withkids.jpg" class="card-img-top" alt="with children">
+         <div class="card-body d-flex flex-column">
+        <h2 class="card-title">{{allCategories.[3].name}}</h2>
+        <br>
+        <p class="card-text">Get the kids involved! Way more interactive than screen time!</p>
+        <a href="/exercises/{{allCategories.[3].id}}" class="btn btn-dark mt-auto align-self-center">View</a>
+          </div>
+  </div>
+</div>
+</div>
+</div>
+</div>
+
+
+
+    
+  
+ <script src="/js/save-to-favorites.js"></script>
+ <script src="/js/logout.js"></script>

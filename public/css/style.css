@@ -1,0 +1,199 @@
+/* Universal Selector */
+* {
+  margin:0;
+  padding:0;  
+ 
+}
+
+/* Element Selectors */
+body {
+  position: relative;
+  background-color: black;
+  font-size: 20px;
+ 
+  color: #4F4846;
+  /* margin: 0; */
+margin-right: 20px;
+margin-left: 20px;
+ 
+}
+.hero-image {
+  background-image: url("/images/logo.png");
+  background-color: black;
+  height: 400px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: relative;
+  
+}
+.header {
+  /* padding: 60px; */
+  text-align: center;
+  background: black;
+  font-size: 30px;
+ 
+}
+h1, h2 {
+  margin: 20px;
+  /* text-align: center; */
+  color: white;
+  font-size: 55px;
+ justify-content: center;
+}
+
+/* h2 {
+  margin: 20px;
+  text-align: center;
+  color: lightpink;
+} */
+
+figure {
+  margin-bottom: 40px;
+}
+
+nav {
+  background-color: black;
+}
+
+
+
+img {
+  display: block;
+  margin: 10px auto;
+}
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: lightpink;
+  color: white;
+  text-align: center;
+}
+
+
+form {
+  /* Center the form on the page */
+  margin: 0 auto;
+  width: 500px;
+  padding: 10px;
+  border: 5px solid lightpink;
+  border-radius: 20px;
+}
+
+label {
+  display: inline-block;
+  width: 100px;
+}
+  
+input, 
+textarea {
+  box-sizing: border-box;
+  width: 300px;
+  border: 1px solid #4F4846;
+}
+
+textarea {
+  vertical-align: top;
+  height: 60px;
+}
+  
+button,
+input[type=submit] {
+  height: 40px;
+  width: 120px;
+  background-color: lightpink;
+  color: black;
+
+}
+
+.text-center {
+  text-align: center;
+}
+
+#info {
+  color: White;
+  font-size: 30px;
+  
+}
+#cat-row {
+  background-color: lightpink;
+}
+ 
+.menu-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  text-align: center;
+}
+
+.card {
+  background-color: black;
+  box-shadow: 0 0 .2rem #fff,
+            0 0 .2rem #fff,
+            0 0 2rem  rgb(243, 99, 178),
+            0 0 0.8rem  rgb(243, 99, 178),
+            0 0 2.8rem  rgb(243, 99, 178),
+            inset 0 0 1.3rem  rgb(243, 99, 178); 
+  color: white;
+}
+
+  
+body {
+  font-size: 18px;
+
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;  
+}  
+
+h1, h2 {
+  text-align: center;
+  font-weight: 400;
+
+}
+  
+h1 {
+  font-family: "Sacramento", sans-serif;
+  font-size: 6.2rem;
+  
+  border: 0.2rem solid #fff;
+  border-radius: 2rem;
+  padding: 0.4em;
+  box-shadow: 0 0 .2rem #fff,
+            0 0 .2rem #fff,
+            0 0 2rem  rgb(243, 99, 178),
+            0 0 0.8rem  rgb(243, 99, 178),
+            0 0 2.8rem  rgb(243, 99, 178),
+            inset 0 0 1.3rem  rgb(243, 99, 178); 
+}
+
+
+
+
+/* ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: lightpink;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111;
+  color: lightpink;
+} */
