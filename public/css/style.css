@@ -61,7 +61,16 @@ nav {
 img {
   display: block;
   margin: 10px auto;
+
+
+
+  /* height: 200px;
+  width: 200px; */
+  /* height: 400px;
+  object-fit: cover; */
+
 }
+
 .footer {
   position: fixed;
   left: 0;
@@ -75,10 +84,11 @@ img {
 
 form {
   /* Center the form on the page */
+
   margin: 0 auto;
   width: 500px;
   padding: 10px;
-  border: 5px solid lightpink;
+  border: 5px solid rgb(243, 99, 178);
   border-radius: 20px;
 }
 
@@ -103,9 +113,14 @@ button,
 input[type=submit] {
   height: 40px;
   width: 120px;
-  background-color: lightpink;
+  background-color: rgb(243, 99, 178);
   color: black;
+  margin-bottom: 50px;
 
+}
+
+.btn {
+  margin: 30px;
 }
 
 .text-center {
@@ -128,7 +143,8 @@ input[type=submit] {
   text-align: center;
 }
 
-.card {
+/* .card { */
+  .card-body, .card-img-top {
   background-color: black;
   box-shadow: 0 0 .2rem #fff,
             0 0 .2rem #fff,
@@ -137,7 +153,36 @@ input[type=submit] {
             0 0 2.8rem  rgb(243, 99, 178),
             inset 0 0 1.3rem  rgb(243, 99, 178); 
   color: white;
+  text-align: center;
+  height: 100%;
+  width: 100%;
+  padding: 0px;
+  margin: 0px;
 }
+/* ---------nds--------- */
+
+.card-title {
+  margin: 10px;
+}
+
+.card-text {
+  margin: 0px;
+  /* margin-bottom: 10px; */
+  font-size: 25px;
+}
+
+.card-text-btm {
+  margin: 0px;
+  margin-bottom: 10px;
+  font-size: 25px;
+}
+
+
+/* .card-img-top {
+  height: 400px;
+  width: 400px; */
+/* } */
+/* ---------nds--------- */
 
   
 body {
@@ -152,7 +197,6 @@ body {
 h1, h2 {
   text-align: center;
   font-weight: 400;
-
 }
   
 h1 {
