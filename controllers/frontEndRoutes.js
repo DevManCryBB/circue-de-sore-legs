@@ -1,9 +1,9 @@
 const express = require('express');
 const router = express.Router();
-// const Captcha = require("captcha-generator-alphanumeric").default;
+const Recaptcha = require('express-recaptcha').RecaptchaV2;
 const {Exercises, Users, ExerciseCategories} = require('../models');
 
-
+var recaptcha = new Recaptcha('6Lew1A0mAAAAAPVxYDap9zoBs5ZpdkfI5SimD5s7', '6Lew1A0mAAAAAIkS45cLEAnx6lhmYq7umfPQaraU');
 
 //get all categories to categories page
 router.get("/categories", (req,res) =>{
@@ -39,9 +39,7 @@ router.get('/exercises/:id', (req, res) => {
 // get home
 
 router.get("/", (req, res) => {
-  // let captcha = new Captcha();
-  // console.log("Captcha Value: " + captcha); { captchaImage: captcha.dataURL, captcha: captcha.value }
-  res.render("home")
+  res.render("home", { captcha: recaptcha.render() })
 });
 
 // // get one exercise
